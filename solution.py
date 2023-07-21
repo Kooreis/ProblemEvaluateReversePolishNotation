@@ -1,18 +1,4 @@
-def evaluate(expression):
-    stack = []
-    for token in expression.split(' '):
-        if token in ['+', '-', '*', '/']:
-            operand2 = stack.pop()
-            operand1 = stack.pop()
-            if token == '+':
-                result = operand1 + operand2
-            elif token == '-':
-                result = operand1 - operand2
-            elif token == '*':
-                result = operand1 * operand2
-            else:
-                result = operand1 / operand2
-            stack.append(result)
-        else:
-            stack.append(int(token))
-    return stack.pop()
+def main():
+    expression = input("Enter the Reverse Polish Notation expression: ")
+    result = evaluate(expression)
+    print("The result is: ", result)
